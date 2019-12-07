@@ -71,13 +71,13 @@ function max_time = part1(distance, radius, theta_dPrime, phi_dPrime, gravity, m
     while (1)
         t = increment * step_size;      % time
     
-        % NB: with a constant accleration x (and starting with no angular velocty and oriented horizontally)
+        % NB: with a constant acceleration x (and starting with no angular velocity and oriented horizontally)
         % the velocity (w.r.t time) is x*t and the position (w.r.t time) is 0.5*x*t^2
         phi = 0.5 * phi_dPrime * t^2;
         theta_prime = theta_dPrime * t;
         phi_prime = phi_dPrime * t;
     
-        % x and y componenets of acceleration
+        % x and y components of acceleration
         accel_x = (-(distance * theta_dPrime) + (sind(phi) * (theta_dPrime + phi_dPrime) * radius) - ...
             (((theta_prime + phi_prime)^2) * radius * cosd(phi)));
         accel_y = (-(distance * theta_prime^2) - (cosd(phi) * (theta_dPrime + phi_dPrime) * radius) - ...
@@ -133,7 +133,7 @@ function graphResult(distance, radius, theta_dPrime, phi_dPrime, max_t, gravity,
     while(1)
         t = increment * step_size;      % time
                
-        % NB: with a constant accleration x (and starting with no angular velocty and oriented horizontally)
+        % NB: with a constant acceleration x (and starting with no angular velocity and oriented horizontally)
         % the velocity (w.r.t time) is x*t and the position (w.r.t time) is 0.5*x*t^2
         phi = 0.5 * phi_dPrime * t^2;
         theta_prime = theta_dPrime * t;
